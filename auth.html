@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookVerse - Login & Register</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="container">
+        <a href="home.html" class="back-link">← Back to Home</a>
+
+        <div class="auth-card">
+            <div class="auth-header">
+                <span class="logo-icon">📚</span>
+                <h1>BookVerse</h1>
+                <p>Your Portal to Knowledge</p>
+            </div>
+
+            <div id="loginForm" class="form-container active">
+                <h2>Welcome Back</h2>
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                </form>
+                <p class="toggle-text">Don't have an account? <a href="#" onclick="toggleForm()">Sign up</a></p>
+                <p class="forgot-password"><a href="#" onclick="showForgotForm()">Forgot password?</a></p>
+            </div>
+
+            <div id="registerForm" class="form-container">
+                <h2>Create Account</h2>
+                <form onsubmit="handleRegister(event)">
+                    <div class="form-group">
+                        <label for="registerUsername">Username</label>
+                        <input type="text" id="registerUsername" placeholder="Choose a username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" placeholder="Min. 6 characters" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerConfirmPassword">Confirm Password</label>
+                        <input type="password" id="registerConfirmPassword" placeholder="Confirm password" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn-primary">Create Account</button>
+                </form>
+                <p class="toggle-text">Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
+            </div>
+
+            <div id="forgotPasswordForm" class="form-container">
+                <h2>Reset Password</h2>
+                <p class="forgot-description">Enter your email address and we'll send you instructions to reset your password.</p>
+                <form onsubmit="handleForgotPassword(event)">
+                    <div class="form-group">
+                        <label for="forgotEmail">Email</label>
+                        <input type="email" id="forgotEmail" placeholder="your@email.com" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Reset Link</button>
+                </form>
+                <p class="toggle-text"><a href="#" onclick="backToLogin()">Back to Login</a></p>
+            </div>
+
+            <div id="resetPasswordForm" class="form-container">
+                <h2>Create New Password</h2>
+                <form onsubmit="handleResetPassword(event)">
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" id="newPassword" placeholder="••••••••" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmNewPassword">Confirm Password</label>
+                        <input type="password" id="confirmNewPassword" placeholder="••••••••" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn-primary">Update Password</button>
+                </form>
+                <p class="toggle-text"><a href="#" onclick="backToLogin()">Back to Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

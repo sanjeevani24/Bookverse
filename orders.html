@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - BookVerse</title>
+    <link rel="stylesheet" href="orders.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <span class="logo-icon">📚</span>
+                <h1 class="logo-text">BookVerse</h1>
+            </div>
+            <div class="nav-right">
+                <a href="catalog.html" class="nav-link">Back to Shopping</a>
+                <button onclick="logout()" class="btn-logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="page-title">My Orders</h2>
+
+        <div id="ordersContainer" class="orders-container"></div>
+    </div>
+
+    <script src="orders.js"></script>
+</body>
+</html>

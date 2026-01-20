@@ -1,0 +1,78 @@
+import socket
+import sys
+
+# --- Configuration ---
+# Your server's IP address from ipconfig
+# This is the main "Wi-Fi" address from your screenshot.
+SERVER_IP = "192.168.137.1" 
+
+# NOTE: If your client is connected to your server's Mobile Hotspot,
+# you must use this IP instead:
+# SERVER_IP = "192.168.137.1"
+
+SERVER_PORT = 5000 # The port the server is listening on
+BUFFER_SIZE = 8192
+# ---------------------
+
+
+print(f"Attempting to connect to server at {SERVER_IP}:{SERVER_PORT}...")
+
+# Create a socket
+try:
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+except socket.error as e:
+    print(f"Error creating socket: {e}")
+    sys.exit(1)
+
+# Connect to the server
+try:
+    s.connect((SERVER_IP, SERVER_PORT))
+except socket.gaierror as e:
+    print(f"Error: Hostname could not be resolved. {e}")
+    sys.exit(1)
+except ConnectionRefusedError:
+    print(f"Error: Connection refused. Is the server running?")
+    print("Please check:")
+    print(f"  1. The server script (host_pc.py) is running on {SERVER_IP}.")
+    print("  2. The server's firewall is allowing TCP port 5000.")
+    sys.exit(1)
+except socket.timeout:
+    print("Error: Connection timed out. Server is unreachable (check IP and firewall).")
+    sys.exit(1)
+
+print("Connected! You can now send queries to Gemini.")
+print("Type 'quit' to exit.")
+
+try:
+    while True:
+        # Get user input
+        query = input("> ")
+        
+        if not query:
+            continue
+        
+        # Send the query to the server
+        s.sendall(query.encode('utf-8'))
+        
+        # If user types 'quit', exit the loop
+        if query.lower() == 'quit':
+            print("Disconnecting...")
+            break
+            
+        # Receive the response from the server
+        response = s.recv(BUFFER_SIZE)
+        
+        if not response:
+            print("Server disconnected.")
+            break
+            
+        # Print the decoded (text) response
+        print(f"Gemini: {response.decode('utf-8')}")
+
+except (ConnectionResetError, BrokenPipeError):
+    print("Error: Connection to the server was lost.")
+except KeyboardInterrupt:
+    print("\nDisconnecting...")
+finally:
+    # Clean up and close the connection
+    s.close()

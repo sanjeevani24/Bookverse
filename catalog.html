@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Catalog - BookVerse</title>
+    <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="catalog.html" class="logo-section">
+                <span class="logo-icon">📚</span>
+                <h1 class="logo-text">BookVerse</h1>
+            </a>
+            <div class="nav-right">
+                <span class="user-name" id="userName"></span>
+                <a href="orders.html" class="nav-link">My Orders</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="cart.html" class="cart-link">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button onclick="logout()" class="btn-logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="catalog-header">
+            <h2>Discover Your Next Favorite Book</h2>
+        </div>
+
+        <div class="search-section">
+            <input type="text" id="searchInput" placeholder="Search by title, author, or genre..." class="search-input">
+            <button onclick="searchBooks()" class="btn-search">Search</button>
+        </div>
+
+        <div class="filters">
+            <button onclick="filterByCategory('all')" class="filter-btn active" data-category="all">All Books</button>
+            <button onclick="filterByCategory('fiction')" class="filter-btn" data-category="fiction">Fiction</button>
+            <button onclick="filterByCategory('non-fiction')" class="filter-btn" data-category="non-fiction">Non-Fiction</button>
+            <button onclick="filterByCategory('science')" class="filter-btn" data-category="science">Science</button>
+            <button onclick="filterByCategory('technology')" class="filter-btn" data-category="technology">Technology</button>
+        </div>
+
+        <div id="bookGrid" class="book-grid"></div>
+    </div>
+
+    <script src="catalog.js"></script>
+</body>
+</html>

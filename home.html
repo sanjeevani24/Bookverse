@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookVerse - Your Portal to Knowledge</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <span class="logo-icon">📚</span>
+                <h1 class="logo-text">BookVerse</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="auth.html" class="nav-link btn-login">Login</a>
+                <a href="auth.html" class="nav-link btn-signup">Sign Up</a>
+            </div>
+            <div class="menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Welcome to BookVerse</h2>
+            <p class="hero-subtitle">Discover, Explore, and Own Your Favorite Books</p>
+            <p class="hero-description">Your ultimate destination for a curated collection of books across all genres. Shop, read reviews, and build your personal library with ease.</p>
+            <div class="hero-buttons">
+                <a href="auth.html" class="btn-primary-large">Start Shopping</a>
+                <a href="#features" class="btn-secondary-large">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="book-stack">
+                <div class="book book-1">📚</div>
+                <div class="book book-2">📖</div>
+                <div class="book book-3">📕</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose BookVerse?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Easy Search</h3>
+                    <p>Find your favorite books instantly with our advanced search and filter options.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛒</div>
+                    <h3>Quick Checkout</h3>
+                    <p>Seamless shopping experience with quick and secure checkout process.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Track Orders</h3>
+                    <p>Monitor your orders in real-time and get instant updates on delivery status.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Best Prices</h3>
+                    <p>Competitive pricing and regular offers on all your favorite books.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Wide Selection</h3>
+                    <p>Browse through thousands of books across all genres and categories.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Support</h3>
+                    <p>24/7 customer support to help you with any queries or concerns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Popular Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="goToCategory('fiction')">
+                    <div class="category-icon">📖</div>
+                    <h3>Fiction</h3>
+                    <p>Explore imaginative stories</p>
+                </div>
+                <div class="category-card" onclick="goToCategory('non-fiction')">
+                    <div class="category-icon">📕</div>
+                    <h3>Non-Fiction</h3>
+                    <p>Learn from real experiences</p>
+                </div>
+                <div class="category-card" onclick="goToCategory('science')">
+                    <div class="category-icon">🔭</div>
+                    <h3>Science</h3>
+                    <p>Discover the universe</p>
+                </div>
+                <div class="category-card" onclick="goToCategory('technology')">
+                    <div class="category-icon">💻</div>
+                    <h3>Technology</h3>
+                    <p>Master modern skills</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Reading Journey?</h2>
+            <p>Join thousands of book lovers and discover your next favorite read</p>
+            <a href="auth.html" class="btn-primary-large">Join BookVerse Today</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About BookVerse</h4>
+                <p>BookVerse is your ultimate destination for discovering and purchasing books. We believe in making quality reading material accessible to everyone.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="auth.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Email: support@bookverse.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <p>Available 24/7</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BookVerse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Online Bookstore</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">Online Bookstore</h1>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="checkout-layout">
+            <div class="checkout-form">
+                <h2>Checkout</h2>
+
+                <form onsubmit="placeOrder(event)">
+                    <div class="form-section">
+                        <h3>Shipping Information</h3>
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea id="address" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pincode">Pincode</label>
+                                <input type="text" id="pincode" required pattern="[0-9]{6}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Payment Method</h3>
+
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="cod" checked>
+                                <span>Cash on Delivery</span>
+                            </label>
+
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="card">
+                                <span>Credit/Debit Card (Simulated)</span>
+                            </label>
+
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="upi">
+                                <span>UPI (Simulated)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-place-order">Place Order</button>
+                </form>
+            </div>
+
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div id="orderItems"></div>
+
+                <div class="summary-totals">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">₹0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span id="shipping">₹50</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">₹0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2>Order Confirmed!</h2>
+            <p class="order-id">Order ID: <span id="orderId"></span></p>
+            <p class="confirmation-message">Thank you for your order. We'll send you a confirmation email shortly.</p>
+            <button onclick="goToCatalog()" class="btn-continue">Continue Shopping</button>
+        </div>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+</html>
